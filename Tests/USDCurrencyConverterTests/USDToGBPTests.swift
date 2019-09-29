@@ -1,12 +1,12 @@
 import XCTest
-@testable import USDToGBP
+@testable import USDCurrencyConverter
 
-final class USDToGBPTests: XCTestCase {
+final class USDCurrencyConverterTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(USDToGBP().text, "Hello, World!")
+        XCTAssertEqual(USDCurrencyConverter().text, "Hello, World!")
     }
 
     static var allTests = [

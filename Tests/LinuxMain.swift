@@ -1,7 +1,7 @@
 import XCTest
 
-import USDToGBPTests
+import USDCurrencyConverterTests
 
 var tests = [XCTestCaseEntry]()
-tests += USDToGBPTests.allTests()
+tests += USDCurrencyConverterTests.allTests()
 XCTMain(tests)
