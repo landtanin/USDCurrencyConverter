@@ -19,11 +19,11 @@ public class USDCurrencyConverter {
             url, method: .get,
             parameters: [
                 "access_key":apiKey,
-                "currencies":Currency.self,
+                "currencies":currency.rawValue,
                 "format":"1"
             ]
         ).response { (response) in
-            completion(response.data) 
+            completion(response.data)
         }
         
     }
