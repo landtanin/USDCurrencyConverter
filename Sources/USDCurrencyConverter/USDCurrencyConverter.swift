@@ -12,11 +12,13 @@ public class USDCurrencyConverter {
     
     public func convertUSDTo(currency: Currency) -> Data? {
         
-        Alamofire.request(
+        AF.request(
             url, method: .get,
-            parameters: ["access_key":apiKey,
-                         "currencies":Currency.self,
-                         "format":"1"]
+            parameters: [
+                "access_key":apiKey,
+                "currencies":Currency.self,
+                "format":"1"
+            ]
         ).response { [weak self] (response) in
             return response.data
         }
