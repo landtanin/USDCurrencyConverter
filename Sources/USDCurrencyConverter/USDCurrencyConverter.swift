@@ -3,14 +3,17 @@ import Foundation
 
 public class USDCurrencyConverter {
     
-    private var url = URL(string: "http://apilayer.net/api/live?")
     private var apiKey: String
     
     public init(apiKey: String) {
         self.apiKey = apiKey
     }
     
-    public func convertUSDTo(currency: Currency) -> Data? {
+    public func convertUSDTo(currency: Currency, completion: @escaping (Data?) -> Void) {
+        
+        guard let url = URL(string: "http://apilayer.net/api/live?") else {
+            return
+        }
         
         AF.request(
             url, method: .get,
@@ -19,8 +22,8 @@ public class USDCurrencyConverter {
                 "currencies":Currency.self,
                 "format":"1"
             ]
-        ).response { [weak self] (response) in
-            return response.data
+        ).response { (response) in
+            completion(response.data) 
         }
         
     }
