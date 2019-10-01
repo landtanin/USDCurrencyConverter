@@ -1,4 +1,5 @@
 import Alamofire
+import Foundation
 
 public class USDCurrencyConverter {
     
@@ -9,7 +10,7 @@ public class USDCurrencyConverter {
         self.apiKey = apiKey
     }
     
-    public convertUSDTo(currency: Currency) -> Data? {
+    public func convertUSDTo(currency: Currency) -> Data? {
         
         Alamofire.request(
             url, method: .get,
